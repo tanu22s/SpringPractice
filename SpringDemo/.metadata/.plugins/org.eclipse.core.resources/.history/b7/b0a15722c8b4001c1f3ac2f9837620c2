@@ -1,0 +1,6 @@
+package in.co.rays.springJDBC;
+org.springframework.jdbc.core.RowMapper;
+
+public class RowMapper1 implements RowMapper<User>{
+
+}

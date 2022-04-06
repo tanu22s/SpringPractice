@@ -1,0 +1,39 @@
+package in.co.rays.springJDBC;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+
+public class testfile {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("my spring proj started ....");
+		
+	ApplicationContext context	 = new ClassPathXmlApplicationContext("in/co/rays/springJDBC/conf.xml");
+	
+	UserDao userdao = context.getBean("UserDao",UserDao.class);
+	
+		
+		/*
+		 * JdbcTemplate template = context.getBean("jdbcTemplate", JdbcTemplate.class);
+		 */
+   
+		/*
+		 * String query =
+		 * "insert into User (ID, FirstName, LastName, loginId, password, gender) values(?,?,?,?,?,?)"
+		 * ;
+		 * 
+		 * int result= template.update(query, 102,"milli", "Kaushal",
+		 * "milli365@gmail.com", "milli@123456", "female");
+		 * System.out.println("no of records inserted:" + result);
+		 */
+   
+  int user= userdao.getUser(1);
+   System.out.println(user);
+  
+	}
+
+}

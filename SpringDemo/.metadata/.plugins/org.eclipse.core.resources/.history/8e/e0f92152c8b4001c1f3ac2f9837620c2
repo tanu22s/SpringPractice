@@ -1,0 +1,28 @@
+package in.co.rays.springJDBC;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import in.co.rays.hiber.Student;
+
+
+
+public class RowMapper1 implements RowMapper<User>{
+
+	@Override
+	public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+	
+		Student student = new Student();
+		student.setID(rs.getInt(1));
+		student.setFirstName(rs.getString(2));
+		student.setLastName(rs.getString(3));
+		student.setLoginId(rs.getString(4));
+		student.setPassword(rs.getString(5));
+		
+		
+		return student;
+	}
+
+}
